@@ -17,7 +17,7 @@ export class FormComponent implements OnInit {
   constructor(private shared:SharedService,
     private http: HttpClient) { }
 
-  student = new Student(0,'','','','','','','');
+  student = new Student('','','','','','','','');
   private signupData:any;
 
   ngOnInit(): void {
@@ -29,23 +29,24 @@ export class FormComponent implements OnInit {
   }
 
 
-  SubmitClick():void{
+  SubmitClick(SubmitForm: NgForm):void{
     console.log(this.student);
-
-    
     //save in Maria DB database AWS
-    //Post data
-    // const headers = { 'Authorization': 'Bearer my-token' };
-    // const body = { title: 'Angular POST Request Example' };
-    // this.http.post<any>('https://jsonplaceholder.typicode.com/posts', body, { headers }).subscribe({
-    //   next: data => {
+    alert("Thank you!");
 
-    //             },
-    //           error: error => {
-    //           console.error('There was an error!', error);
-    //       }
-    // });
+    const body = {"id":parseInt(this.student.StudentID),"name":this.student.FullName,
+    "email":this.student.Email,"country":this.student.Country,"state":this.student.State,
+  "city":this.student.City,"zip":parseInt(this.student.Zip),"password":this.student.Password} ;
+    this.http.post<any>('http://localhost:3000/api/student', body).subscribe({
+      next: data => {
+        console.log(data);
+                },
+              error: error => {
+              console.error('There was an error!', error);
+          }
+    });
 
+    SubmitForm.reset();
   }
 
 }

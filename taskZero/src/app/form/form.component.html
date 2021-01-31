@@ -6,8 +6,7 @@
   </nav>
 
 <div class="box">
-    {{student | json}}
-    <form #SubmitForm="ngForm" (ngSubmit)="SubmitClick()">
+    <form #SubmitForm="ngForm" (ngSubmit)="SubmitClick(SubmitForm)">
         <div class="container">
             <div class="row firstRow">
                 <div class="col-md-4">
@@ -123,4 +122,4 @@
     </form>
 </div>
 
-<!-- <app-students></app-students> -->
+<app-students></app-students>

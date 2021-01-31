@@ -8,9 +8,11 @@ export class SharedService {
   constructor() { }
   private signUpData:any;
   
+  private students = [];
+
   AddSignUpData(signUpData:any):void
   {
-    this.signUpData = signUpData
+    this.signUpData = signUpData;
   }
   getSignUpData():any{
     return this.signUpData;
