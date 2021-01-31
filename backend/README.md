@@ -1,1 +1,3 @@
-npm start and open localhost:3000 for Backend server
+## Development server
+
+Run `npm start` for a dev server. Navigate to `http://localhost:3000/`.
