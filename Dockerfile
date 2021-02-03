@@ -8,6 +8,7 @@ WORKDIR /root/
 COPY --from=ui-build /usr/src/app/taskZero/dist/taskZero ./taskZero/dist/taskZero
 COPY /backend/package*.json ./
 RUN npm install
-COPY index.js .
+COPY /backend/index.js .
 EXPOSE 3000
+RUN cd backend
 CMD ["npm", "start"]
