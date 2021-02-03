@@ -21,7 +21,7 @@ export class SignupComponent implements OnInit {
   
   SignUpClick(SignUpForm:NgForm)
   {
-    //console.log(SignUpForm.value);
+    console.log(SignUpForm.value);
     this.shared.AddSignUpData(SignUpForm.value);
     this.router.navigate(["/form"]);
   }

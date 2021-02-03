@@ -18,12 +18,4 @@ export class SharedService {
     return this.signUpData;
   }
 
-  // getSignUpPage():boolean{
-  //   return this.signUpPage;
-  // }
-
-  // setSignUpPage(flag:boolean):void{
-  //   this.signUpPage = flag;
-  // }
-
 }

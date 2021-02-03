@@ -66,7 +66,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "taskZero:build"
+            "browserTarget": "taskZero:build",
+            "proxyConfig": "proxy.conf.json"
           },
           "configurations": {
             "production": {

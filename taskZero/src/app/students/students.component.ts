@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { SharedService } from '../shared.service';
-import { StudentView } from './studentView';
+import { StudentView } from '../studentView';
 
 @Component({
   selector: 'app-students',
@@ -20,7 +20,7 @@ export class StudentsComponent implements OnInit {
   public Students:StudentView[] = []
   refreshClick(){
     //pull data and update Students variable
-       this.http.get<any>('http://localhost:3000/api/students').subscribe({
+       this.http.get<any>('/api/students').subscribe({
         next: data => {
           this.Students = []
           data.forEach((s:any) => {

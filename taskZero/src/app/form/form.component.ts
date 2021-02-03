@@ -30,16 +30,17 @@ export class FormComponent implements OnInit {
 
 
   SubmitClick(SubmitForm: NgForm):void{
-    console.log(this.student);
+    //console.log(this.student);
     //save in Maria DB database AWS
     alert("Thank you!");
 
     const body = {"id":parseInt(this.student.StudentID),"name":this.student.FullName,
     "email":this.student.Email,"country":this.student.Country,"state":this.student.State,
-  "city":this.student.City,"zip":parseInt(this.student.Zip),"password":this.student.Password} ;
-    this.http.post<any>('http://localhost:3000/api/student', body).subscribe({
+  "city":this.student.City,"zip":parseInt(this.student.Zip),"password":this.student.Password};
+  
+    this.http.post<any>('/api/student', body).subscribe({
       next: data => {
-        console.log(data);
+         console.log(data);
                 },
               error: error => {
               console.error('There was an error!', error);
