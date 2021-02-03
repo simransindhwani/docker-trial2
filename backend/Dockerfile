@@ -6,7 +6,7 @@ RUN cd taskZero && npm install && npm run build
 FROM node:12 AS server-build
 WORKDIR /root/
 COPY --from=ui-build /usr/src/app/taskZero/dist/taskZero ./taskZero/dist/taskZero
-COPY package*.json ./
+COPY /backend/package*.json ./
 RUN npm install
 COPY index.js .
 EXPOSE 3000
