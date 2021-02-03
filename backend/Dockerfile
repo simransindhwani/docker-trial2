@@ -1,5 +1,6 @@
 FROM node:12 AS ui-build
 WORKDIR /usr/src/app
+RUN cd ..
 COPY taskZero/ ./taskZero/
 RUN cd taskZero && npm install && npm run build
 
