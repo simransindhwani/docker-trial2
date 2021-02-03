@@ -1,0 +1,21 @@
+version: '3'
+services:
+  nodejs-server:
+    build:
+      context: .
+    ports:
+      - "3000:3000"
+    container_name: nodejs-api
+    volumes:
+       - ./src:/usr/src/app/src
+    links:
+    - database # link this service to the database service
+  database: # name of the third service
+  image: mysql # specify image to build container from
+  environment: 
+    MYSQL_ROOT_PASSWORD: KA01hh8469
+    MYSQL_DATABASE: innodb
+    MYSQL_USER: admin
+    MYSQL_HOST: taskzerodb.cm23ylawjbiy.us-east-1.rds.amazonaws.com
+  ports:
+  - "3306:3306" # specify port forwarding
